@@ -63,7 +63,7 @@ function convertJsonToEnv(inputPath, outputPath) {
   const inputContent = readFile(inputPath);
   const jsonContent = JSON.parse(inputContent);
   const envStr = Object.entries(jsonContent).reduce((acc, [key, value]) => {
-    return `${acc}${key}=${value}\n`;
+    return `${acc}${key}='${value}'\n`;
   }, "");
 
   // create ouput env file
